@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolo Štěstí</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="color: b0b0b0">Vyhraj zájezd zdarma!</h1>
+    <div class="wheel-container">
+        <div class="wheel">
+            <span class="segment" style="--rotation: 0deg;">Cesta kolem světa</span>
+            <span class="segment" style="--rotation: 60deg;">14 dní na táboře Archa</span>
+            <span class="segment" style="--rotation: 120deg;">Smůla</span>
+            <span class="segment" style="--rotation: 180deg;">Můžeš točit znovu!</span>
+            <span class="segment" style="--rotation: 240deg;">Zájezd do Karibiku</span>
+            <span class="segment" style="--rotation: 300deg;">Smůla</span>
+        </div>
+        <div class="arrow"></div>
+    </div>
+
+    <button id="spin-button">Roztoč!</button>
+    <div id="result" style="color: b0b0b0"></div>
+    <div class="confetti-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
