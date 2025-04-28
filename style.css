@@ -5,21 +5,35 @@ body {
     align-items: center;
     gap: 20px;
     padding: 20px;
-    background-color: #9ca3af;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./bg.jpg');
 }
 
 .wheel-container {
     position: relative;
 }
 
+.bg{
+    position: absolute;
+    translate: -50% -50%;
+    top: 50%;
+    left: 50%;
+    background-image: url('./border.png');
+    background-size: cover; /* Nebo contain, auto podle potřeby */
+    background-position: center; /* Umístění obrázku */
+    z-index: 10; /* Aby byl obrázek pod kolem */
+    width: 930px;
+    height: 600px;
+    scale: 0.85; /* Zvětšení pozadí */
+    }
+
 .wheel {
     width: min(50vw, 50vh);
     height: min(50vw, 50vh);
     border-radius: 50%;
-    border: 5px solid #333;
     position: relative;
     overflow: hidden;
     transition: transform 5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Plynulá animace */
+    z-index: 5;
 }
 
 .segment {
@@ -28,10 +42,13 @@ body {
     transform-origin: 50% 0%;
     left: 50%;
     top: 50%;
-    width: 60%;
-    height: calc(60%*0.866); /* to assure that it will be 60deg 60deg 60deg triangle */
+    width: 70%;
+    height: calc(70%*0.866); /* to assure that it will be 60deg 60deg 60deg triangle */
     display: inline-block;
     transform: translateX(-50%) rotate(var(--rotation)); /* Umístění a otočení segmentů */
+    
+    pointer-events: none;
+    user-select: none; 
 
     display: flex;
     justify-content: center; /* Horizontálně na střed */
@@ -59,6 +76,7 @@ body {
     border-left: 30px solid #333;
     border-bottom: 20px solid transparent;
     transform: translateY(-50%) rotate(180deg);
+    z-index: 100;
 }
 
 #spin-button {
