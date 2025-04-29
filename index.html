@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div style="background-image: url('./nadpisText.png'); background-size: cover; width: 600px; height: 160px;"></div>
+    <div class="header-text"></div>
     <div class="wheel-container">
         <div class="bg"></div>
         <div class="wheel">
             <span class="segment" style="--rotation: 0deg;">Cesta kolem světa</span>
-            <span class="segment" style="--rotation: 60deg;">14 dní na táboře Archa</span>
+            <span class="segment" style="--rotation: 60deg;">14 dní na Arše</span>
             <span class="segment" style="--rotation: 120deg;">Smůla</span>
             <span class="segment" style="--rotation: 180deg;">Můžeš točit znovu!</span>
             <span class="segment" style="--rotation: 240deg;">Zájezd do Karibiku</span>
@@ -25,7 +25,17 @@
     <button id="spin-button">Roztoč!</button>
     <div id="result" style="color: b0b0b0"></div>
     <div class="confetti-container"></div>
-
-    <script src="script.js"></script>
+    <div id="winNotification" class="popup-notification">
+        <div class="popup-content">
+          <h2>Gratulujeme!</h2>
+          <p>Podívejte se co jste vyhráli!</p>
+          <video id="winningVideo" width="100%" height="100%" controls>
+            <source src="./video.webm" type="video/webm">
+          </video>
+        </div>
+      </div>
+      
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js" type="module"></script>
 </body>
 </html>

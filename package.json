@@ -8,5 +8,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "canvas-confetti": "^1.9.3",
+    "http-server": "^14.1.1"
+  }
 }

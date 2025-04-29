@@ -6,6 +6,7 @@ body {
     gap: 20px;
     padding: 20px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./bg.jpg');
+    background-position: center;
 }
 
 .wheel-container {
@@ -21,9 +22,8 @@ body {
     background-size: cover; /* Nebo contain, auto podle potřeby */
     background-position: center; /* Umístění obrázku */
     z-index: 10; /* Aby byl obrázek pod kolem */
-    width: 930px;
-    height: 600px;
-    scale: 0.85; /* Zvětšení pozadí */
+    width: min(55vw, 55vh);
+    height: min(55vw, 55vh);
     }
 
 .wheel {
@@ -54,7 +54,7 @@ body {
     justify-content: center; /* Horizontálně na střed */
     align-items: center;    /* Vertikálně na střed */
     writing-mode: sideways-rl;
-    font-size: 100%;
+    font-size: 1.4vh;
     font-weight: bold;
 }
 
@@ -138,3 +138,68 @@ body {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+
+.header-text{
+    background-image: url('./nadpisText.png'); 
+    background-size: cover; 
+    width: calc(15 * 3vw); 
+    height: calc(4 * 3vw);
+}
+
+.popup-notification {
+    display: none; /* Zpočátku skryté */
+    position: fixed; /* Pevná pozice na obrazovce */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Vycentrování */
+    background-color: rgba(0, 0, 0, 0.5); /* Průhledné pozadí */
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Aby bylo nad ostatním obsahem */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  h2 {
+    color: green;
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  p {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Animace pro zobrazení (volitelné) */
+  .popup-notification.show {
+    display: flex;
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  
+  .popup-content.show {
+    animation: slideIn 0.3s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translate(-50%, -60%); opacity: 0; }
+    to { transform: translate(-50%, -50%); opacity: 1; }
+  }
