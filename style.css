@@ -46,15 +46,17 @@ body {
     height: calc(70%*0.866); /* to assure that it will be 60deg 60deg 60deg triangle */
     display: inline-block;
     transform: translateX(-50%) rotate(var(--rotation)); /* Umístění a otočení segmentů */
-    
     pointer-events: none;
     user-select: none; 
 
     display: flex;
     justify-content: center; /* Horizontálně na střed */
     align-items: center;    /* Vertikálně na střed */
-    writing-mode: sideways-rl;
-    font-size: 1.4vh;
+}
+
+.segment > span { /* Stylujeme vnitřní span s textem */
+    transform: translateY(175%); /* Posuneme text nahoru */
+    font-size: 100%;
     font-weight: bold;
 }
 
@@ -80,13 +82,24 @@ body {
 }
 
 #spin-button {
-    padding: 10px 20px;
+    width: min(15vw, 15vh);
+    height: min(15vw, 15vh);
+    padding: 0; /* Odstraň padding, nebo ho uprav tak, aby celkové rozměry zůstaly stejné */
     font-size: 1.1em;
     cursor: pointer;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 50%; /* Polovina šířky/výšky vytvoří kruh */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50; /* Aby byl nad kolem */
+    display: flex; /* Pro centrování textu uvnitř kruhu */
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Pro jistotu zarovnání textu */
 }
 
 #result {
@@ -103,6 +116,7 @@ body {
     height: 100%;
     overflow: hidden;
     pointer-events: none; /* Aby konfety neblokovaly interakci */
+    z-index: 200;
 }
 
 .confetti {
@@ -155,7 +169,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* Průhledné pozadí */
     width: 100%;
     height: 100%;
-    z-index: 1000; /* Aby bylo nad ostatním obsahem */
+    z-index: 101; /* Aby bylo nad ostatním obsahem */
     justify-content: center;
     align-items: center;
   }
@@ -171,6 +185,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 102; /* Aby bylo nad pozadím */
   }
   
   h2 {
