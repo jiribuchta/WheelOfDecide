@@ -13,7 +13,7 @@ spinButton.addEventListener('click', () => {
 
     // Generuj náhodné otočení (více otáček + náhodný úhel)
     const extraSpins = 3; // Počet celých otočení
-    const randomDegree = 241 + Math.random()*58;
+    const randomDegree = 160;
     const totalDegrees = extraSpins * 360 + randomDegree;
 
     // Nastav přechod pro animaci
@@ -25,13 +25,9 @@ spinButton.addEventListener('click', () => {
     // Po skončení animace urči výsledek
     setTimeout(() => {
         wheel.style.transition = 'none'; // Odstraň přechod pro okamžité nastavení do finální pozice
-        const finalRotation = totalDegrees % 360;
-        const winningSegmentIndex = (Math.floor((360 - finalRotation) / degreesPerSegment) % numSegments)-1;
-        const winningSegmentText = segments[winningSegmentIndex].textContent;
-        handleWin(winningSegmentText); // Zavolej funkci pro zobrazení výhry
+        handleWin("Plavba lodí"); // Zavolej funkci pro zobrazení výhry
         spinning = false;
 
-        // TODO vyřeš co se stane po konci točení a přidej konfety
 
     }, 5000); // Doba trvání animace (musí odpovídat CSS přechodu)
 });

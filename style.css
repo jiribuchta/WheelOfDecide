@@ -5,7 +5,8 @@ body {
     align-items: center;
     gap: 20px;
     padding: 20px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./background.jpeg');
+    background-size: cover;
     background-position: center;
 }
 
@@ -32,41 +33,11 @@ body {
     border-radius: 50%;
     position: relative;
     overflow: hidden;
+    background-image: url("./wheel.png");
+    background-size: cover; /* Nebo contain, auto podle potřeby */
     transition: transform 5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Plynulá animace */
     z-index: 5;
 }
-
-.segment {
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    position: absolute;
-    transform-origin: 50% 0%;
-    left: 50%;
-    top: 50%;
-    width: 70%;
-    height: calc(70%*0.866); /* to assure that it will be 60deg 60deg 60deg triangle */
-    display: inline-block;
-    transform: translateX(-50%) rotate(var(--rotation)); /* Umístění a otočení segmentů */
-    pointer-events: none;
-    user-select: none; 
-
-    display: flex;
-    justify-content: center; /* Horizontálně na střed */
-    align-items: center;    /* Vertikálně na střed */
-}
-
-.segment > span { /* Stylujeme vnitřní span s textem */
-    transform: translateY(175%); /* Posuneme text nahoru */
-    font-size: 100%;
-    font-weight: bold;
-}
-
-/* Různé barvy pro segmenty (volitelné) */
-.segment:nth-child(1) { background-color: #664fdf; } /* První segment */
-.segment:nth-child(2) { background-color: #c33ec4; } /* Druhý segment */
-.segment:nth-child(3) { background-color: #ef5a9f; } /* Třetí segment */
-.segment:nth-child(4) { background-color: #ef9b62; } /* Čtvrtý segment */
-.segment:nth-child(5) { background-color: #d2c525; } /* Pátý segment */
-.segment:nth-child(6) { background-color: #568fcb; } /* Šestý segment */
 
 .arrow {
     position: absolute;
@@ -87,8 +58,8 @@ body {
     padding: 0; /* Odstraň padding, nebo ho uprav tak, aby celkové rozměry zůstaly stejné */
     font-size: 1.1em;
     cursor: pointer;
-    background-color: #007bff;
-    color: white;
+    background-color: transparent;
+    color: transparent;
     border: none;
     border-radius: 50%; /* Polovina šířky/výšky vytvoří kruh */
     position: absolute;
@@ -154,10 +125,10 @@ body {
 }
 
 .header-text{
-    background-image: url('./nadpisText.png'); 
+    background-image: url('./header.png'); 
     background-size: cover; 
-    width: calc(15 * 3vw); 
-    height: calc(4 * 3vw);
+    width: calc(10 * 3vw); 
+    height: calc(6 * 3vw);
 }
 
 .popup-notification {
