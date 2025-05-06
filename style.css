@@ -10,6 +10,20 @@ body {
     background-position: center;
 }
 
+.logos {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    width: 15vw;
+}
+
 .wheel-container {
     position: relative;
 }
