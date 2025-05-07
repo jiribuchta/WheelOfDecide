@@ -71,7 +71,7 @@ body {
     width: 0;
     height: 0;
     border-top: 20px solid transparent;
-    border-left: 30px solid #333;
+    border-left: 30px solid #ffc400;
     border-bottom: 20px solid transparent;
     transform: translateY(-50%) rotate(180deg);
     z-index: 100;
@@ -175,7 +175,6 @@ body {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 500px;
     border-radius: 8px;
     position: absolute;
     top: 50%;
@@ -184,6 +183,12 @@ body {
     z-index: 102; /* Aby bylo nad pozadím */
   }
   
+  h1 {
+    color: green;
+    text-align: center;
+    margin-top: 0;
+  }
+
   h2 {
     color: green;
     text-align: center;

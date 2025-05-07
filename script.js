@@ -12,12 +12,12 @@ spinButton.addEventListener('click', () => {
     resultElement.textContent = '';
 
     // Generuj náhodné otočení (více otáček + náhodný úhel)
-    const extraSpins = 3; // Počet celých otočení
+    const extraSpins = 10; // Počet celých otočení
     const randomDegree = 160;
     const totalDegrees = extraSpins * 360 + randomDegree;
 
     // Nastav přechod pro animaci
-    wheel.style.transition = 'transform 5s cubic-bezier(0.1, 0.7, 0.1, 1)';
+    wheel.style.transition = 'transform 10s cubic-bezier(0.1, 0.7, 0.1, 1)';
 
     // Otoč kolo
     wheel.style.transform = `rotate(${totalDegrees}deg)`;
@@ -29,7 +29,7 @@ spinButton.addEventListener('click', () => {
         spinning = false;
 
 
-    }, 5000); // Doba trvání animace (musí odpovídat CSS přechodu)
+    }, 10000); // Doba trvání animace (musí odpovídat CSS přechodu)
 });
 
 const winNotification = document.getElementById('winNotification');
